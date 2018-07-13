@@ -1,7 +1,7 @@
 import { FETCHING_FOODS, FOODS_FETCHED, FETCHING_FOODS_ERROR } from '../actions/foodsActions';
 
 const initState = {
-	foods: [],
+	foodsArray: [],
 	isFoodsFetched: false,
 	isFetchingFoods: false,
 	loadingFoodsMessage: null,
@@ -22,7 +22,7 @@ export default (foods = initState, action) => {
 			return {
 				...foods,
 				foods_error: null,
-				foods: action.foods,
+				foodsArray: action.foods,
 				isFoodsFetched: true,
 				isFetchingFoods: false,
 				loadingFoodsMessage: null,
@@ -34,7 +34,6 @@ export default (foods = initState, action) => {
 				isFoodsFetched: false,
 				isFetchingFoods: false,
 				loadingFoodsMsg: null,
-				foods: [],
 			};
 
 		default:

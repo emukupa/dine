@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const ROOT_URL = `https://localhost/api/`;
+const ROOT_URL = `http://localhost:8000/api`;
 const FOODS_URL = `${ROOT_URL}/foods`;
 
 export const FETCHING_FOODS = 'FETCHING_FOODS';
@@ -35,6 +35,8 @@ export const getFoods = (token) => (dispatch) => {
 
 export const getFoods = () => (dispatch) => {
 	const url = FOODS_URL;
+	//let url = 'https://jsonplaceholder.typicode.com/posts/';
+	//url = 'https://swipeanddine.herokuapp.com/api/';
 	dispatch({
 		type: FETCHING_FOODS,
 		message: 'Fetching foods...',

@@ -8,12 +8,14 @@ import { Wrapper } from './AppCSS';
 
 class App extends Component {
 	componentDidMount() {
-		console.log('component mount ');
+		this.props.getFoods();
 	}
 	render() {
 		return (
 			<Wrapper>
-				<h1>Food title</h1>
+				<h1>List of Foods</h1>
+				{this.props.foods.map((food) => <div key={food.id}>{food.name}</div>)}
+
 				<Foods />
 			</Wrapper>
 		);
@@ -22,7 +24,7 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
 	return {
-		foods: state.foods,
+		foods: state.foods.foodsArray,
 	};
 };
 
